@@ -2,10 +2,10 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-// import About from "./components/About";
+import About from "./components/About";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -35,24 +35,22 @@ function App() {
     }
   };
 
-  // const  router = createBrowserRouter ([
-  //   {
-  //     path: "/about",
-  //     element: <><Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} /><About/></>
-  //   },
-  //   {
-  //     path: "/",
-  //     element:  <><Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} /><TextForm showAlert={showAlert} heading = "Enter the text to analyze below"  mode={mode}/></>
-  //   }
-  // ]) 
+  const  router = createBrowserRouter ([
+    {
+      path: "/about",
+      element: <><Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} /><About mode={mode}/></>
+    },
+    {
+      path: "/",
+      element:  <><Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} /><TextForm showAlert={showAlert} heading = "Enter the text to analyze below"  mode={mode}/></>
+    }
+  ]) 
   return (
     <>
-        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
-        {/* <RouterProvider router={router} /> */}
+        <RouterProvider router={router} />
         <Alert alert={alert} />
         <div className="container my-3">
-        {/* <About/> */}
-        <TextForm showAlert={showAlert} heading = "Enter the text to analyze below"  mode={mode}/>
+        
         </div>
     </>
   );
