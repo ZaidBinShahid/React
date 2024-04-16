@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function About(props) {
   // const [myStyle, setMyStyle] = useState({
@@ -7,30 +7,12 @@ export default function About(props) {
   // });
   let myStyle = {
     color: props.mode === 'dark'?'white':'#042743',
-    backgroundColor: props.mode === 'dark'?'#042743':'white',
-    border: '2px solid',
-    borderColor: props.mode === 'dark'?'white':'#042743'
+    backgroundColor: props.mode === 'dark'?'rgb(36 71 104)':'white',
+    
   }
-  // const [btntext, setBtnText] = useState("Enable Dark Mode");
-
-  // const toggleStyle = () => {
-  //   if (myStyle.color === "black") {
-  //     setMyStyle({
-  //       color: "white",
-  //       backgroundColor: "black",
-  //       border: "1px solid white"
-  //     });
-  //     setBtnText("Enable Light Mode");
-  //   } else {
-  //     setMyStyle({
-  //       color: "black",
-  //       backgroundColor: "white",
-  //     });
-  //     setBtnText("Enable Dark Mode");
-  //   }
-  // };
+ 
   return (
-    <div className="container rounded" style={myStyle}>
+    <div className="container rounded" style={{color: props.mode === 'dark'?'white':'#042743' }}>
       <h2 className="my-3">About us</h2>
       <div className="accordion" id="accordionExample" >
         <div className="accordion-item">
